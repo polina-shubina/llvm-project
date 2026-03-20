@@ -1,4 +1,4 @@
-// RUN: clang -fplugin=../RenameVarPlugin.so -Xclang -plugin -Xclang rename-var -fsyntax-only %s | FileCheck %s
+// RUN: clang -fplugin=../clang/examples/RenameVarPlugin/RenameVarPlugin.so -Xclang -plugin -Xclang rename-var -fsyntax-only %s | FileCheck %s
 
 int arr[10];
 int *ptr;
