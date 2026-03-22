@@ -1,0 +1,8 @@
+; RUN: opt -load-pass-plugin=../../build/lib/Mul2ShiftPass.so -passes=mul2shift -S %s | FileCheck %s
+
+define i32 @test(i32 %x) {
+  %y = mul i32 %x, 8
+  ret i32 %y
+}
+
+; CHECK: %y = shl i32 %x, 3
